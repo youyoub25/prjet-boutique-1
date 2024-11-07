@@ -33,10 +33,11 @@ $quantite = intval(trim(fgets(STDIN)));
 if (isset($articles[$index]) && $quantites[$index] >= $quantite) {
     // MAJ dustock
     $quantites[$index] -= $quantite;
-    echo " Vente confirmée : $quantite {$articles[$index]}.\n";
+    $ventes[$index] += $quantite;
+    echo "Vente confirmée : $quantite {$articles[$index]}.\n";
     echo "Quantité restante de {$articles[$index]} : {$quantites[$index]}\n";
 } else {
-    echo " Stock insuffisant.\n";
+    echo "Stock insuffisant.\n";
 }
 
 
